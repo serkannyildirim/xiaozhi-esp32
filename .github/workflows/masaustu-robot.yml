@@ -1,0 +1,27 @@
+name: Masaustu Robot firmware
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: espressif/idf:release-v6.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build (Turkce arayuz)
+        shell: bash
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          source "$IDF_PATH/export.sh"
+          python scripts/build.py masaustu-robot --name masaustu-robot --language tr-TR
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: masaustu-robot-firmware
+          path: build/merged-binary.bin
+          if-no-files-found: error
