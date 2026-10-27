@@ -41,8 +41,8 @@
 #define SERVO_MAX_PULSE_US      2500           // 180°
 #define PAN_CENTER_DEG          90
 #define TILT_CENTER_DEG         90
-#define PAN_RANGE_DEG           60             // merkezden ±60° (kafa ±90'a kadar çarpmıyor, pay bırakıldı)
-#define TILT_RANGE_DEG          18             // merkezden ±18° (kafa ±20°'de brakete yaklaşıyor)
+#define PAN_RANGE_DEG           40             // merkezden ±60° (kafa ±90'a kadar çarpmıyor, pay bırakıldı)
+#define TILT_RANGE_DEG          10             // merkezden ±18° (kafa ±20°'de brakete yaklaşıyor)
 #define PAN_DIR                 -1              // ters dönüyorsa -1 yap
 #define TILT_DIR                -1              // yukarı yerine aşağı bakıyorsa -1 yap
 
